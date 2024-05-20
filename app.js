@@ -26,13 +26,13 @@ var currentTime = setInterval(function(){
 		hours = hours;
 	}
 
-	
-	clock.textContent = addZero(hours) + " : " + addZero(minutes) + " : " + addZero(seconds) + " " + ampm;
-	
-    if(minutes == 0 || minutes == 30) {
+    if(minutes == 0 || minutes == 5 || minutes == 6 || minutes == 7) {
         audio.autoplay = true;
         audio.load();
     }
+	
+	clock.textContent = addZero(hours) + " : " + addZero(minutes) + " : " + addZero(seconds) + " " + ampm;
+	
 },);
 
 function addZero(time) {
