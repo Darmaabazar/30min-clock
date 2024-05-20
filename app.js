@@ -3,7 +3,7 @@ const audio = document.querySelector(".audio")
 
 
 function disableAutoplay() { 
-    audio.autoplay = true;
+    audio.autoplay = false;
     audio.load();
 }
 
@@ -25,15 +25,10 @@ var currentTime = setInterval(function(){
 	} else {
 		hours = hours;
 	}
-
-    if(minutes == 0 || minutes == 30) {
-        audio.autoplay = true;
-        audio.load();
-    }
 	
 	clock.textContent = addZero(hours) + " : " + addZero(minutes) + " : " + addZero(seconds) + " " + ampm;
 	
-},);
+}, 1000);
 
 function addZero(time) {
 
@@ -41,5 +36,15 @@ function addZero(time) {
 
 }
 
-currentTime();
+var audioPlay = setInterval(function(){
+	var date = new Date();
+	
+	var minutes = date.getMinutes();
+	
+	if(minutes === 0 || minutes === 30){
+        audio.autoplay = true;
+        audio.load();
+    }
+	
+}, 60000);
 
