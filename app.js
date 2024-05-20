@@ -3,7 +3,7 @@ const audio = document.querySelector(".audio")
 
 
 function disableAutoplay() { 
-    audio.autoplay = false;
+    audio.autoplay = true;
     audio.load();
 }
 
@@ -26,7 +26,7 @@ var currentTime = setInterval(function(){
 		hours = hours;
 	}
 
-    if(minutes == 0 || minutes == 5 || minutes == 6 || minutes == 7) {
+    if(minutes == 0 || minutes == 30) {
         audio.autoplay = true;
         audio.load();
     }
