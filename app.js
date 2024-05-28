@@ -26,7 +26,7 @@ var audioPlay = setInterval(function(){
 	
 	var minutes = date.getMinutes();
 	
-	if((minutes >= 0 && minutes <= 3) || (minutes >= 30 && minutes <= 33)){
+	if((minutes >= 10 && minutes <= 13) || (minutes >= 30 && minutes <= 33)){
         audio.autoplay = true;
 		audio.load();
     }
